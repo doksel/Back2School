@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
+import { Route } from "react-router-dom";
 
-const  AuthPage = () => {
+import LoginPage from "./LoginPage";
+import RegisterPage from "./RegisterPage";
+
+const AuthPage: React.FC = () => {
   return (
-    <div className="AuthPage">
-      AuthPage
-    </div>
+    <>
+      <Route path="/auth/login" exact render={() => <LoginPage />} />
+      <Route path="/auth/register" exact render={() => <RegisterPage />} />
+    </>
   );
-}
+};
 
 export default AuthPage;
