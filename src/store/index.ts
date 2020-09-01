@@ -6,6 +6,6 @@ const store = configureStore({
   reducer: combineReducers(reducers)
 });
 
-export type AppDispatch = typeof store.dispatch;
+export type AppDispatchType = typeof store.dispatch;
 
 export default store;

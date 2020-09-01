@@ -1,23 +1,33 @@
 import React, {useState} from 'react';
 
-import MultipleDatesPicker from '@randex/material-ui-multiple-dates-picker'
-import Button from "../Button";
+import DayPicker, { DateUtils } from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
 
-const MultiDatePicker = () => {
+const MultiDatePicker: React.FC = () => {
   const [open, setOpen] = useState(false)
- 
+  const [selectedDays, setSelectedDays] = useState<Array<Date>>([]);
+
+  const handleDayClick = (day: Date, { selected }: any) => {
+      let selectArray = [...selectedDays];
+
+    if (selected) {
+      const selectedIndex = selectArray.findIndex(selectedDay =>
+        DateUtils.isSameDay(selectedDay, day)
+      );
+      selectArray.splice(selectedIndex, 1);
+    } else {
+        selectArray.push(day);
+    }
+
+    setSelectedDays(selectArray);
+  }
+
   return (
     <div>
-      <Button onClick={() => setOpen(!open)}>
-        Select Dates
-      </Button>
-      
-      <MultipleDatesPicker
-        open={open}
-        selectedDates={[]}
-        onCancel={() => setOpen(false)}
-        onSubmit={dates => console.log('selected dates', dates)}
-      />
+      <DayPicker
+          selectedDays={selectedDays}
+          onDayClick={handleDayClick}
+        />
     </div>
   )
 }
