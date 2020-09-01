@@ -5,6 +5,7 @@ import { AppDispatchType } from "../index";
 
 export type SignInType = {}
 export type SignUpType = {}
+export type ForgotPasswordType = {}
 
 export type ProfileType = {
   firstName: string;
@@ -49,6 +50,12 @@ const authSlice = createSlice({
         token: { ...payload.token }
       };
     },
+    forgotPasswordSuccess(state, { payload }) {
+      return {
+        ...state,
+        token: { ...payload.token }
+      };
+    },
     signOut(state) {
       localStorage.removeItem("token");
       return {
@@ -63,6 +70,7 @@ export const {
   setStateValue,
   signInSuccess,
   signUpSuccess,
+  forgotPasswordSuccess,
   signOut
 } = authSlice.actions;
 
@@ -91,6 +99,21 @@ export const signUp = (value: SignUpType) => async (
     const { data } = await api.auth.signUp(value);
 
     dispatch(signUpSuccess(data));
+  } catch (error) {
+    localStorage.removeItem("token");
+    dispatch(setStateValue({ type: "error", data: false }));
+  }
+  dispatch(setStateValue({ type: "isLoading", data: false }));
+};
+
+export const forgotPassword = (value: ForgotPasswordType) => async (
+  dispatch: AppDispatchType
+) => {
+  try {
+    dispatch(setStateValue({ type: "isLoading", data: true }));
+    const { data } = await api.auth.signUp(value);
+
+    dispatch(forgotPasswordSuccess(data));
   } catch (error) {
     localStorage.removeItem("token");
     dispatch(setStateValue({ type: "error", data: false }));
