@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import api from "../../api";
 
-import { AppDispatchType } from "../index";
+import { AppDispatchType } from "../store";
 
 export type SignInType = {}
 export type SignUpType = {}

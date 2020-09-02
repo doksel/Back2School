@@ -1,0 +1,13 @@
+@import "../../../assets/styles/variables.scss";
+
+.button {
+  margin: 10px;
+
+  button {
+    background-color: green;
+
+    &:hover {
+      background-color: #5dbf5d;
+    }
+  }
+}
