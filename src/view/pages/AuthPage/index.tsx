@@ -1,8 +1,8 @@
 import React from "react";
 import { Route } from "react-router-dom";
 
-import LoginPage from "./LoginPage";
-import RegisterPage from "./RegisterPage";
+import LoginPage from "./LoginPage/LoginPage";
+import RegisterPage from "./RegisterPage/RegisterPage";
 
 const AuthPage: React.FC = () => {
   return (

@@ -1,13 +1,13 @@
 @import "../../../assets/styles/variables.scss";
 
-.button {
+.wrapper {
   margin: 10px;
 
-  button {
-    background-color: green;
+  .button {
+    background-color: $secondary-color;
 
     &:hover {
-      background-color: #5dbf5d;
+      background-color: $secondary-color_hover;
     }
   }
 }
