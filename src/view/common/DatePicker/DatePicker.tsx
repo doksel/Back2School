@@ -1,13 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
-const  DatePicker = () => {
-  return (
-    <div className="DatePicker">
-      DatePicker
-    </div>
-  );
-}
+const DatePicker = () => {
+  return <div className="DatePicker">DatePicker</div>;
+};
 
 export default DatePicker;

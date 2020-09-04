@@ -1,13 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
-const  Selecter = () => {
-  return (
-    <div className="Selecter">
-      Selecter
-    </div>
-  );
-}
+const Selecter = () => {
+  return <div className="Selecter">Selecter</div>;
+};
 
 export default Selecter;

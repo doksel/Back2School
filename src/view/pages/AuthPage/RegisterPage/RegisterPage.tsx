@@ -3,13 +3,13 @@ import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 
 import Form from "./Form";
 
-import {LoginPagePropsType} from "../types";
+import { LoginPagePropsType } from "../types";
 
 const RegisterPage: React.FC<LoginPagePropsType> = () => {
   const dispatch = useDispatch();
   const useTypedSelector: TypedUseSelectorHook<{}> = useSelector;
 
-  const isLoading = useTypedSelector(state => state);
+  const isLoading = useTypedSelector((state) => state);
 
   const formSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();

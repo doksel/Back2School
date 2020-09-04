@@ -3,9 +3,9 @@ import api from "../../api";
 
 import { AppDispatchType } from "../store";
 
-export type SignInType = {}
-export type SignUpType = {}
-export type ForgotPasswordType = {}
+export type SignInType = {};
+export type SignUpType = {};
+export type ForgotPasswordType = {};
 
 export type ProfileType = {
   firstName: string;
@@ -24,7 +24,7 @@ const initialState: AccountType = {
   profile: null,
   token: null,
   isLoading: false,
-  error: ""
+  error: "",
 };
 
 const authSlice = createSlice({
@@ -34,36 +34,36 @@ const authSlice = createSlice({
     setStateValue(state, { payload }) {
       return {
         ...state,
-        [payload.type]: payload.data
+        [payload.type]: payload.data,
       };
     },
     signInSuccess(state, { payload }) {
       localStorage.setItem("token", payload.token);
       return {
         ...state,
-        token: payload.token
+        token: payload.token,
       };
     },
     signUpSuccess(state, { payload }) {
       return {
         ...state,
-        token: { ...payload.token }
+        token: { ...payload.token },
       };
     },
     forgotPasswordSuccess(state, { payload }) {
       return {
         ...state,
-        token: { ...payload.token }
+        token: { ...payload.token },
       };
     },
     signOut(state) {
       localStorage.removeItem("token");
       return {
         ...state,
-        ...initialState
+        ...initialState,
       };
-    }
-  }
+    },
+  },
 });
 
 export const {
@@ -71,7 +71,7 @@ export const {
   signInSuccess,
   signUpSuccess,
   forgotPasswordSuccess,
-  signOut
+  signOut,
 } = authSlice.actions;
 
 export default authSlice.reducer;

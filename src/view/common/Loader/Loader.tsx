@@ -1,13 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
-const  Loader = () => {
-  return (
-    <div className="Loader">
-      Loader
-    </div>
-  );
-}
+const Loader = () => {
+  return <div className="Loader">Loader</div>;
+};
 
 export default Loader;
