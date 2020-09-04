@@ -1,0 +1,13 @@
+@import "../../../assets/styles/variables.scss";
+
+.wrapper {
+  margin: 10px;
+
+  .button {
+    background-color: $secondary-color;
+
+    &:hover {
+      background-color: $secondary-color_hover;
+    }
+  }
+}
