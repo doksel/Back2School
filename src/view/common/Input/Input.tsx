@@ -13,18 +13,16 @@ const Input: React.FC<TextFieldProps & PropsType> = ({
   id,
   label,
   defaultValue,
-}) => {
-  return (
-    <div className="input">
-      <TextField
-        required={required}
-        id={id}
-        label={label}
-        defaultValue={defaultValue}
-        className={custom ? styles.button : ""}
-      />
-    </div>
-  );
-};
+}) => (
+  <div className="input">
+    <TextField
+      required={required}
+      id={id}
+      label={label}
+      defaultValue={defaultValue}
+      className={custom ? styles.button : ""}
+    />
+  </div>
+);
 
 export default Input;

@@ -14,22 +14,18 @@ const Button: React.FC<ButtonProps & PropsType> = ({
   children,
   disabled,
   onClick,
-}) => {
-  console.log(variant, color);
-
-  return (
-    <div className={styles.wrapper}>
-      <MainButton
-        variant={variant}
-        color={color}
-        className={custom ? styles.button : ""}
-        disabled={disabled}
-        onClick={onClick}
-      >
-        {children}
-      </MainButton>
-    </div>
-  );
-};
+}) => (
+  <div className={styles.wrapper}>
+    <MainButton
+      variant={variant}
+      color={color}
+      className={custom ? styles.button : ""}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      {children}
+    </MainButton>
+  </div>
+);
 
 export default Button;
